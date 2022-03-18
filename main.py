@@ -14,7 +14,7 @@ def video_to_frames(video:str, path_output_dir:str,frame:int):
         count += 1
         success, image = vidcap.read()
         if success:
-            if count%frame==0:
+            if count%int(frame)==0:
                 file_name = os.path.join(path_output_dir, 'drone_v1_%d.png') % numbering
                 print(f"save {file_name}.")
                 cv2.imwrite(file_name, image)
